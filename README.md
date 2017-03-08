@@ -1,7 +1,7 @@
 # pdfToImage
 
 
-Webservice Create Jpeg Images from PDF Pages (hires/preview/thumb)
+Webservice for creating Jpeg Images from PDF Pages (hires/preview/thumb)
 
 ## Dependencies
 
