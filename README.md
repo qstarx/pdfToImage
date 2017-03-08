@@ -16,11 +16,12 @@ Webservice for creating Jpeg Images from PDF Pages (hires/preview/thumb). This c
 
   - edit `config/config.php` to your needs
   - create upload dir and change owner to webserver user
-  
-    `mkdir tmp`
-    `mkdir tmp/uploads`
-    `chown -R www-data tmp`
-    
+
+```
+    mkdir tmp
+    mkdir tmp/uploads
+    chown -R www-data tmp
+```
   - run worker daemon (Use supervisord for stability):
     
     `php bin/worker/worker.php`
