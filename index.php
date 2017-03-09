@@ -26,7 +26,10 @@ include_once __DIR__.'/config/config.php';
 <script id="pdf-preview-template" type="text/x-handlebars-template">
       <div class="pdf-preview">
       {{#each image}}
-        <img src="{{ this.src}}"/>
+        <div class="pdf-page">
+          <div><img src="{{ this.src}}"/></div>
+          <div class"pdf-page-info"><button data-path="{{ this.img_path}}">übernehmen</button></div>
+        </div>
       {{/each}}
       </div>
 </script>

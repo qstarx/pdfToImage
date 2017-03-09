@@ -129,3 +129,7 @@ a.pd-button-small:hover, a.pd-button-small:active { color: #535557; text-decorat
     vertical-align: middle; white-space: nowrap; outline: none;
     display: inline-block;
 }
+
+.pdf-page {
+  display: inline-block 
+}

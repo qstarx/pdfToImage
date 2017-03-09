@@ -89,10 +89,12 @@ class pdfPreview {
             $filename = $row;
           }
 
+          $img_path = "$dir/$filename";
           $th_path = "$dir/th/$filename";
           $gal_path = "$dir/gal/$filename";
           logger::append("th_path $th_path",3);
           $status["path"][$i] = $th_path;
+          $preview64[$i]["img_path"] = $img_path;
           $preview64[$i]["th_path"] = $th_path;
           $preview64[$i]["gal_path"] = $gal_path;
           if (is_file($gal_path)) {
