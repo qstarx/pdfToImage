@@ -74,7 +74,7 @@ if (!$upload_return=PluploadHandler::handle(array(
   }
   
   
-  // Using useJobQueue is recomended for large PDFs. 
+  // Using JobQueue is recomended for large PDFs. 
   // This sends the rendering process to background using beanstalkd
   // requires start of bin/worker/worker.php in CLI mode
   
