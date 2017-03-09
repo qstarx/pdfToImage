@@ -1,6 +1,6 @@
 # pdfToImage
 
-Webservice for creating Jpeg Images from PDF Pages (hires/preview/thumb). This code was developed for online printing services.
+Web service for creating Jpeg Images from PDF Pages (hires/preview/thumb). This code was developed for online printing services.
 
 ## Demo
 
