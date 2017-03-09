@@ -24,7 +24,9 @@ var pdfuploader = function(opt) {
     preview_url: 'bin/get_preview.php',
 
     // save url
-    save_url: 'pdf/save_object.php',
+    save_url: 'bin/save_object.php',
+    
+    save_page_url: 'bin/save_page.php',
 
     init: {
 
@@ -109,10 +111,24 @@ var pdfuploader = function(opt) {
       }
 
 
-    }
+    },
+    
+      save_page: function(el) {
+    
+      var path = el.dataset["path"]
+      $.post(
+          that.save_page_url,
+          { file: path },
+          function (data) {
+            if (typeof opt.onPageSave == "function") opt.onPageSave(data)
+              },
+          "json"
+        );
+    
+  }
+
 
   });
-
 
 
   uploader.init();

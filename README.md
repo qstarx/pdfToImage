@@ -23,6 +23,7 @@ Web service for creating Jpeg Images from PDF Pages (hires/preview/thumb). This 
     mkdir tmp
     mkdir tmp/uploads
     chown -R www-data tmp
+    chmod -R u+rX tmp
 ```
   - run worker daemon (Use supervisord for stability):
     
