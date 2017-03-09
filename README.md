@@ -4,13 +4,14 @@ Web service for creating Jpeg Images from PDF Pages (hires/preview/thumb). This 
 
 ## Demo
 
-   See in production on [kalender-druck.de](https://www.kalender-druck.de) ( -> PDF hochladen)
+   See in production on [kalender-druck.de](https://www.kalender-druck.de) ( -> PDF hochladen )
 
 ## Dependencies
 
   - convert (imagemagick)
   - nconvert (XnView) for fast rescaling
-  - beanstalkd for background processing
+  - beanstalkd for background processing [Optional]
+  - pdfcheck [Optional] License required. see [pstill.com](http://www.pstill.com)
 
 ## Installation
 
@@ -26,3 +27,10 @@ Web service for creating Jpeg Images from PDF Pages (hires/preview/thumb). This 
     
     `php bin/worker/worker.php`
     
+## Options
+
+  - Activate useJobQueue in `config/config.php` for background processing. Using useJobQueue is recomended for large PDFs. 
+This sends the rendering process to background using beanstalkd requires start of bin/worker/worker.php in CLI mode
+
+  - Activate pdfcheck in `config/config.php` to get a fast analysis of the file. It requires an installation of Frank Siegert's pdfcheck.
+This tool performs various checks including fonts, colors, bounding boxes, embedded images. The results are returned after upload has completed.

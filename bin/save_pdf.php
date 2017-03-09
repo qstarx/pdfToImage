@@ -57,15 +57,43 @@ if (!$upload_return=PluploadHandler::handle(array(
 
   $fileName=$upload_return["name"];
 
+  // No file? -> exit
+  
   if (!$fileName) die();
 
-  $queue = new jobQueue();
-  $queue->submitJob("pdftool","genPreview",$targetDir.'/'.$fileName);
-  file_put_contents($targetDir.'/'.$fileName.".queue","pdftool genPreview $targetDir.'/'.$fileName");
-
+  // usage of pdfcheck is optional
+  
+  $checkResult = false;
+  
+  if ($CONF["pdfcheck"]) {
+  
+    $check = new pdfCheck($targetDir."/".$fileName);
+    $check->analyze();
+    file_put_contents($targetDir."/".$fileName.".json",json_encode($check->result));
+    $checkResult = $check->result;
+  }
+  
+  
+  // Using useJobQueue is recomended for large PDFs. 
+  // This sends the rendering process to background using beanstalkd
+  // requires start of bin/worker/worker.php in CLI mode
+  
+  if ($CONF["useJobQueue"]) {
+    
+    $queue = new jobQueue();
+    $queue->submitJob("pdftool","genPreview",$targetDir.'/'.$fileName);
+    file_put_contents($targetDir.'/'.$fileName.".queue","pdftool genPreview $targetDir.'/'.$fileName");
+    
+  } else {
+    
+    pdfPreview::genPreview($targetDir.'/'.$fileName);
+    
+  }
+  
   $result = array ('result' => array('status' => 200),
                    'filename' => $fileName,
                    'dir' => $targetDir,
+                   'pdfcheck' => $checkResult,
                    'pdfmatch' => array()
                   );
   out(json_encode($result),true);

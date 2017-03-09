@@ -65,7 +65,7 @@ var pdfuploader = function(opt) {
       else that = this
 
       var size = []; 
-      if (uploader.uploadResponse && uploader.uploadResponse.pdfcheck) [uploader.uploadResponse.pdfcheck.pageinfo.pages[1].width, uploader.uploadResponse.pdfcheck.pageinfo.pages[1].height]
+      if (uploader.uploadResponse && uploader.uploadResponse.pdfcheck) size = [uploader.uploadResponse.pdfcheck.pageinfo.pages[1].width, uploader.uploadResponse.pdfcheck.pageinfo.pages[1].height]
       $.post(
         that.preview_url,
         { filename: uploader.uploadResponse.filename, dir:uploader.uploadResponse.dir, size: size },
@@ -186,10 +186,8 @@ window.onload = function () {
         if(typeof previewResult.pdfmatch.error=='undefined'){
 
           $('#step-upload-content').slideUp(0, function(){
-            $('#step-upload').removeClass('current').addClass('check');
-            $('#step-check').removeClass('disabled').addClass('current');
 
-            $('#pdf-preview').html('<div class="center"><img src="/bilder/ajax-loader.gif"/><h3>Lade Voransicht...</h3><p class="hint">Voransicht überspringen durch sofortiges Übernehmen des PDFs</p></div>')
+            $('#pdf-preview').html('<div class="center"><img src="/bilder/ajax-loader.gif"/><h3>Lade Voransicht...</h3></div>')
 
             var source   = $("#pdf-preview-template").html();
             var template = Handlebars.compile(source);
