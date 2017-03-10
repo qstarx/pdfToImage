@@ -148,5 +148,6 @@ local.properties
 # TeXlipse plugin
 .texlipse
 
+vendor
 tmp
 index.php

@@ -16,6 +16,7 @@ Web service for creating Jpeg Images from PDF Pages (hires/preview/thumb). This 
 
 ## Installation
 
+  - Install with composer
   - edit `config/config.php` to your needs
   - create upload dir and change owner to webserver user
 

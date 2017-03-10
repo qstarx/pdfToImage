@@ -104,6 +104,7 @@ window.onload = function () {
 <body>
 
 <div id="upload-container">
+   <div id="progress"><span></span></div>
    <a class="pd-button-color" id="pick_pdf"><span>PDF-Datei hochladen</span></a>
    <div id="pdf-import-result"></div>
    <div id="pdf-preview"></div>

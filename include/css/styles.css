@@ -131,5 +131,14 @@ a.pd-button-small:hover, a.pd-button-small:active { color: #535557; text-decorat
 }
 
 .pdf-page {
-  display: inline-block 
+  display: inline-block
 }
+
+#progress { height: 2px; width: 100%; z-index: 10; position: relative; }
+#progress span { display: block; height: 2px; width: 0; background-color: #0c0; }
+
+div.fileinfo > div > span { display: inline-block; min-width: 100px; }
+div.pdf-preview img { margin-bottom: 0; }
+
+.panel { padding: 10px;  }
+#pdf-import-result {display:inline-block; font-size:0.75em; text-align:left}
