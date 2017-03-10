@@ -4,7 +4,9 @@ Web service for creating Jpeg Images from PDF Pages (hires/preview/thumb). This 
 
 ## Demo
 
-   See in production on [kalender-druck.de](https://www.kalender-druck.de) ( -> PDF hochladen )
+   See in production on:
+   - PDF Format checking [kalender-druck.de](https://www.kalender-druck.de) ( -> PDF hochladen )
+   - Conversion of Pages [fototasse.com](https://www.fototasse.com/fototassen-hilfe.php) ( -> PDF Import )
 
 ## Dependencies
 
