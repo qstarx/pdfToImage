@@ -1,9 +1,12 @@
 <?php
 include_once __DIR__.'/config/config.php';
 ?>
-<!DOCTYPE html>
-<html lang="de">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml-transitional.dtd">
+<html>
 <head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><head>
 <!-- CSS -->
 
 <link rel="stylesheet" href="include/css/styles.css" media="screen" />
